@@ -19,8 +19,42 @@
 </form>
 
 
-<div id="result">This text will be replaced </div>
+<div id="result"></div>
 
+<form margin-left: 10px;>
+    <input type="radio" id="times" name="arthematic" value="times" onclick="chooseOp()">
+    <label for="times">*</label></br>
+  
+    <input type="radio" id="divide" name="arthematic"  onclick="chooseOp()" 
+       value="divide">
+    <label for="divide">/</label></br>
+  
+    <input type="radio" id="exponent" name="arthematic"  onclick="chooseOp()"   
+       value="exponent">
+    <label for="exponent">**</label></br>
+  </form>
+
+  <p id="results">Choose any arthematic</p>
+
+<script> 
+function chooseOp(){
+    var amount=(Number)(document.getElementById("form_one").value)
+    var tipIncrease=(Number)(document.getElementById("form_two").value)
+     exponent=document.getElementById("exponent").checked
+ 
+     times=document.getElementById("times").checked
+   
+     divide=document.getElementById("divide").checked
+     
+  if(exponent)
+    document.getElementById('results').innerHTML="<b>Exponential Value of Amount and Tip is: </b>"+amount**tipIncrease
+    else if(times)
+    document.getElementById('results').innerHTML="<b>Multiplication Value of Amount and Tip is: </b>"+amount*tipIncrease
+    else if(divide)
+    document.getElementById('results').innerHTML="<b>Division value of Amount and Tip is: </b>"+amount/tipIncrease
+
+}
+</script>
 <script> 
 function tips(){
     var amount=(Number)(document.getElementById("form_one").value)
