@@ -71,10 +71,10 @@ function tips(){
     result="Tip amounts by increase of "+tipIncrease+" are: "
  
     var sum=amount*0.1
-    result+=sum+0.0
+    result+=sum.toFixed(1)
     for(let i=0;i<9;i++){
      var z=sum +(amount*tipIncrease);
-     result += " "+Math.round(z * 10) / 10
+     result += " "+ z.toFixed(1)
      sum=Math.round(z * 10) / 10
 }
 document.getElementById('result').innerHTML=result;
